@@ -1,0 +1,2 @@
+Ini adalah file teks yang akan dienkripsi.
+apa kabar

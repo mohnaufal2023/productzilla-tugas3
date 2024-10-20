@@ -1,0 +1,3 @@
+2024-10-20T09:41:06.839Z - Error saat dekripsi file: ENOENT: no such file or directory, open 'C:\Users\ASUS\OneDrive\Desktop\tugas node.js\test.txt.enc'
+2024-10-20T09:43:07.601Z - File ./test.txt berhasil dienkripsi.
+2024-10-20T09:45:00.060Z - File ./test.txt.enc berhasil didekripsi.

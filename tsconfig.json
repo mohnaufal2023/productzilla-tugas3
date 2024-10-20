@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "es6",                         // Versi ECMAScript target
+      "module": "ESNext",                      // Menggunakan ESNext module
+      "strict": true,                          // Mengaktifkan semua pemeriksaan tipe ketat
+      "esModuleInterop": true,                 // Memungkinkan impor module CommonJS
+      "skipLibCheck": true                     // Melewatkan pemeriksaan tipe di file library
+    },
+    "include": ["index.ts"],                   // Menentukan file yang akan dikompilasi
+    "exclude": ["node_modules"]                // Mengecualikan folder node_modules
+  }
+  
