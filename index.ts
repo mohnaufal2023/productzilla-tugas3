@@ -7,7 +7,7 @@ const filePath = process.argv[3];
 const password = process.argv[4];
 const logPath = './logs/encrypt.log';  // Lokasi file log
 
-// Membuat folder logs jika belum ada
+
 async function ensureLogDirectory() {
     try {
         await fs.mkdir(path.dirname(logPath), { recursive: true });
@@ -24,10 +24,10 @@ async function logMessage(message: string) {
 async function encryptFile(filePath: string, password: string) {
     try {
         const data = await fs.readFile(filePath, 'utf8');
-        const iv = crypto.randomBytes(16); // Membuat IV baru
-        const key = crypto.scryptSync(password, 'salt', 32); // Membuat key dari password
+        const iv = crypto.randomBytes(16); 
+        const key = crypto.scryptSync(password, 'salt', 32); 
         const cipher = crypto.createCipheriv('aes-256-ctr', key, iv);
-        const encrypted = Buffer.concat([iv, cipher.update(data), cipher.final()]); // Menyimpan IV bersama data terenkripsi
+        const encrypted = Buffer.concat([iv, cipher.update(data), cipher.final()]); 
         
         await fs.writeFile(`${filePath}.enc`, encrypted);
         console.log(`File ${filePath} berhasil dienkripsi.`);
@@ -43,8 +43,8 @@ async function encryptFile(filePath: string, password: string) {
 async function decryptFile(filePath: string, password: string) {
     try {
         const data = await fs.readFile(filePath);
-        const iv = data.slice(0, 16); // Mengambil IV dari data terenkripsi
-        const key = crypto.scryptSync(password, 'salt', 32); // Membuat key dari password
+        const iv = data.slice(0, 16); 
+        const key = crypto.scryptSync(password, 'salt', 32); 
         const decipher = crypto.createDecipheriv('aes-256-ctr', key, iv);
         const decrypted = Buffer.concat([decipher.update(data.slice(16)), decipher.final()]); // Dekripsi data tanpa IV
 
